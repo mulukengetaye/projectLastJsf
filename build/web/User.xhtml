@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+  <h:head>
+        <title>user</title>
+        <link rel="stylesheet" type="text/css" href="style.css"></link>
+    </h:head>
+    <h:body class="userback">
+        <h1 class="tit">WELCOME TO FOOD ORDERING MENU</h1>
+        <h:form >
+            
+        <div class="divclass">
+            <h3 style="color: violet" id="texts">Name:<h:inputText  class="testfield"  id="username" value="#{usersTest.username}" > </h:inputText> </h3>
+            <h3 style="color: violet" id="texts">Phone_No:<h:inputText class="testfield" id="phone_no" value="#{usersTest.phone_no}" > </h:inputText > </h3>
+            <h3 style="color: violet" id="texts">City:<h:inputText  class="testfield" id="city"  value="#{usersTest.city}" > </h:inputText > </h3>
+            <h3 style="color: violet" id="texts">Sub City:<h:inputText  class="testfield" id="sub_city" value="#{usersTest.sub_city}"> </h:inputText > </h3>
+            <h3 style="color: violet" id="texts">Street No:<h:inputText class="testfield"  id="street_no" value="#{usersTest.street_no}" > </h:inputText > </h3>
+            <h3 style="color: violet" id="texts">Home No:<h:inputText class="testfield" id="home_no" value="#{usersTest.home_no}"> </h:inputText > </h3>
+
+            <h:commandButton  value="submit" class="userbutton" action="#{usersTest.insertData}"> </h:commandButton>
+        </div>
+        </h:form>
+        
+    </h:body>
+</html>

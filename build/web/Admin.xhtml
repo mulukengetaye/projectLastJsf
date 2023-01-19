@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>admin</title>
+        <link rel="stylesheet" href="style.css"></link>
+    </h:head>
+    <h:body class="adminClass" >
+        <strong > <h1 style="green" align="center" class="homepage">MANAGER HOMEPAGE</h1></strong> 
+        <h:form class="adminform">
+            <h3 class="namestyle"> Name    :<h:inputText     value="#{adminCheck.userType}" > </h:inputText> </h3>
+            <h3>Password:<h:inputText  value="#{adminCheck.password}"> </h:inputText> </h3>
+            
+            <h:commandButton class="subbut"  value="Login" action="#{adminCheck.adminChecker}"></h:commandButton>
+        
+        
+        </h:form>
+    </h:body>
+</html>

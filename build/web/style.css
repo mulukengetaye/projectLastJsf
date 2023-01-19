@@ -1,0 +1,128 @@
+
+.indexbody{
+ background-image: url("image/indexBackground.jpg");
+ 
+}
+.formbody{
+    background-color: rgba(1,0,0,0.7);
+    vertical-align: 10px;
+    justify-content: center;
+    padding:150px 10px;
+    border-radius: 40px;
+    width: 300px;
+ margin:auto;
+
+}
+
+.titlet{
+    background: linear-gradient(45deg,crimson,#ff6666,#ff00cc,#33ff33);
+    text-decoration: double;
+    text-align: center;
+    border-radius: 40px;
+    width: 700PX;
+    padding: 10px 30px;
+    background-color: #ffffff;
+    font-size: 40px;
+    font-family: 'MemphisRiver';
+       margin: auto; 
+       
+}
+.fclass{
+  
+ text-align: right;
+ padding: 150px 50px;   
+height: 200px;
+justify-items: right;
+    
+}
+.manager{
+    border-radius: 40px;
+    margin-right: 10px;
+    background: linear-gradient(45deg,#ffff00,#ff6666,#0000cc,#00ffff);
+           padding: 10px 80px;
+       
+        
+            font-size: 20px;    
+}
+
+.user{
+     background: linear-gradient(45deg,#0000cc,#00ffff,#ffff00,#ff6666);
+     border-radius: 40px;
+     font-size: 20px;
+    background-color:#333300;
+  padding: 10px 100px;
+}
+.info{
+    border-radius: 40px;
+    background: linear-gradient(45deg,#ffff00,#ff6666,#0000cc,#00ffff);
+           padding: 10px 60px;
+   
+         
+             font-size: 20px;   
+}
+
+
+.tit{
+     text-align: center;
+    background: linear-gradient(45deg,#ffff00,#ff6666,#0000cc,#00ffff);
+     color: red;
+}
+
+
+
+ 
+ 
+ 
+.adminClass{
+    
+    background-image: url("image/adminback.jpg");
+    
+}
+.adminform{
+    padding: 10px 10px;
+    text-align: right;
+ 
+}
+.homepage{
+    border-radius: 40px;
+    padding: 20px 30px;
+     background-image: url("image/adminback.jpg");
+     font-size: 50px;
+    font-family: 'MemphisRiver'
+    
+}
+.namestyle{
+ margin-right: 50px;   
+}
+
+
+
+
+.userback{
+    background-image:url("image/user.jpg");
+    
+}
+.divclass{
+    border-radius: 40px;
+    margin: auto;
+    background-color: rgba(1,0,0,0.7);
+    width: 350px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.userbutton{
+    padding: 10px 50px;
+    border-radius: 40px;
+    background-color: red;
+}
+#texts{
+    padding-right: 40px
+    
+}
+.testfield{
+   gap: 10px;
+   height: 20px
+    
+}
