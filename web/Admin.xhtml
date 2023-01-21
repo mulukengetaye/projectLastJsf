@@ -6,15 +6,44 @@
         <title>admin</title>
         <link rel="stylesheet" href="style.css"></link>
     </h:head>
-    <h:body class="adminClass" >
+    <style>
+        .adminBody{
+            background-image:url("image/adminback.jpg");
+         
+        }
+        .adminform{
+           background-color: rgba(1,0,0,0.7);
+           width: 350px;
+            margin: auto;
+            border-radius: 40px;
+            
+        }
+        .subbut{
+            padding:10px 30px;
+            border-radius: 20px;
+        }
+        .text{
+            
+            color: green;
+            font-size: 30px;
+        }
+        .input{
+            height: 20px;
+            border-radius: 20px;
+        }
+        
+    </style>
+    <h:body  class="adminBody" >
         <strong > <h1 style="green" align="center" class="homepage">MANAGER HOMEPAGE</h1></strong> 
-        <h:form class="adminform">
-            <h3 class="namestyle"> Name    :<h:inputText     value="#{adminCheck.userType}" > </h:inputText> </h3>
-            <h3>Password:<h:inputText  value="#{adminCheck.password}"> </h:inputText> </h3>
+        <h:form >
+        <div class="adminform">
+            <h3 class="text"> Name    :<h:inputText     value="#{adminCheck.name}" class="input"> </h:inputText> </h3>
+            <h3 class="text" >Password:<h:inputText  value="#{adminCheck.password}" class="input"> </h:inputText> </h3>
             
             <h:commandButton class="subbut"  value="Login" action="#{adminCheck.adminChecker}"></h:commandButton>
         
         
+        </div>
         </h:form>
     </h:body>
 </html>

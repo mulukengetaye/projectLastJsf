@@ -5,40 +5,32 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.enterprise.context.Dependent;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author THECREW
- */
-@ManagedBean
+@Dependent
+@ManagedBean(name="userBean")
 @SessionScoped
 public class UserBean implements Serializable {
 
-    public List<UsersTest> getUserList() {
+    public List<UsersTest> getuserList() {
         List<UsersTest> list = new ArrayList<>();
         try {
-            String[] course = null;
+          
             DBConnection dbcon = new DBConnection();
             Connection con = dbcon.connMethod();
             ResultSet rs = con.createStatement().executeQuery("select * from MYUSERTABLE");
             while (rs.next()) {
                 UsersTest usr = new UsersTest();
-                usr.setusername(rs.getString("NAME"));
-                usr.setphone_no(rs.getString("PHONE"));
-                usr.setcity(rs.getString("CITY"));
-                  usr.setsub_city(rs.getString("SUB_CITY"));
-                usr.setstreet_no(rs.getString("STREET_NO"));
-                usr.sethome_no(rs.getString("HOME_NO"));
-                
-               
-              // list.add(usr);
+                usr.setUsername(rs.getString("NAME"));
+                usr.setPhone_no(rs.getString("PHONE"));
+                usr.setCity(rs.getString("CITY"));
+                  usr.setSub_city(rs.getString("SUB_CITY"));
+                usr.setStreet_no(rs.getString("STREET_NO"));
+                usr.setHome_no(rs.getString("HOME_NO"));
+              list.add(usr);
+              
             }
         } catch (SQLException e) {
         }

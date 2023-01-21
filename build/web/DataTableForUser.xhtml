@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>data table for customer</title>
+         <link rel="stylesheet" href="style.css"></link>
+    </h:head>
+    <style>
+        .datatable{
+            margin: auto;
+        }  
+        .title{
+            font-size: 20px;
+            color: red;
+        }
+        
+    </style>
+    <h:body  class="dataDecor fg" style="background-color: #9966ff;" >
+        <h3 align="center" class="title"> INFORMATION OF CUSTOMER USED IN ONLINE ORDERING </h3>
+
+        <h:dataTable   
+                         value="#{userBean.getuserList()}"
+                         var="data"  style="background-color: #ccffcc;" cellpadding="20px;"  class="datatable"> 
+             <h:column>
+                    <f:facet name="header">
+                        NAME
+                    </f:facet>
+                    #{data.username}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header" class="text-center alert-warning">
+                        PHONE
+                    </f:facet>
+                    #{data.phone_no}
+                </h:column>
+             <h:column>
+                    <f:facet name="header">
+                        CITY
+                    </f:facet>
+                    #{data.city}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header" class="text-center alert-warning">
+                        SUB_CITY
+                    </f:facet>
+                    #{data.sub_city}
+                </h:column>
+ <h:column>
+                    <f:facet name="header">
+                      STREET_NO
+                    </f:facet>
+                    #{data.street_no}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header" class="text-center alert-warning">
+                     HOME_NO
+                    </f:facet>
+                    #{data.home_no}
+                </h:column>
+            
+       </h:dataTable>
+        
+      
+    </h:body>
+</html>

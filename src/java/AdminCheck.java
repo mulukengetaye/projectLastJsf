@@ -24,17 +24,19 @@ import javax.inject.Named;
 @Named("adminCheck")
 @ManagedBean
 public class AdminCheck implements Serializable {
-     private static final long serialVersionUID = 1094801825228386363L;
-    private String userType;
+    
+    private String name;
     private String password;
 
-    public String getUserType() {
-        return userType;
+    public String getName() {
+        return name;
     }
 
-    public void setUserType(String userType) {
-        this.userType = userType;
+    public void setName(String name) {
+        this.name = name;
     }
+
+  
 
     public String getPassword() {
         return password;
@@ -48,33 +50,35 @@ public class AdminCheck implements Serializable {
     
     public String adminChecker()throws SQLException, ClassNotFoundException{
      
-        boolean acheck=LogAdmin.check(userType,password);
+        boolean acheck=LogAdmin.check(name,password);
         if(acheck){
         DBConnection connect=new DBConnection();
         Connection conn=connect.connMethod();
-        PreparedStatement pre=conn.prepareStatement("select USERTYPE from USERTBL where USERNAME=?");
-         pre.setString(1, userType);       
+        PreparedStatement pre=conn.prepareStatement("select USERTYPE from USERCHECK where USERNAME=?");
+         pre.setString(1, name);       
             ResultSet rs = pre.executeQuery();
             rs.next();
-            String userType =rs.getString(1);
+            String u_type =rs.getString(1);
          
-            if ("Admin".equals(userType)) {
-                return "Manager";
+            if ("Admin".equals(u_type)) {
+                return "Admin";
             } else {
                 return "index";
             }
-        } else {
+      } 
+        
+         else {
             FacesContext.getCurrentInstance().addMessage(
                     null,
-                    new FacesMessage(FacesMessage.SEVERITY_WARN,
-                            "Incorrect Username and Passowrd",
-                            "Please enter correct username and Password"));
-            return "User";
-        }
-        }
-    
-    
-    
+                   new FacesMessage(FacesMessage.SEVERITY_WARN,
+                          "Wrong Username and Passowrd",
+                          "sorry please enter correctly"
+                           
+                   ));
+           return "User";
+       }
+    }
+        
     }
    
     

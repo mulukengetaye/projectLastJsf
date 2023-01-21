@@ -11,37 +11,14 @@ import javax.inject.Named;
 @Named("logAdmin")
 @RequestScoped
 public class LogAdmin implements Serializable {  
-public static String username;
-public static String userpassword;
 
-    public static String getUsername() {
-        return username;
-    }
-
-    public static void setUsername(String username) {
-        LogAdmin.username = username;
-    }
-
-  
-
-    public static String getUserpassword() {
-        return userpassword;
-    }
-
-    public static void setUserpassword(String userpassword) {
-        LogAdmin.userpassword = userpassword;
-    }
-
-
-
+private static String Driver="oracle.jdbc.driver.OracleDriver";
     public static boolean check(String username, String userpassword) {
     
     boolean status=false;
         try {
            
-           Class.forName("oracle.jdbc.driver.OracleDriver");
-//            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "java2021", "1616");
-            //CallableStatement callobj=con.prepareCall("{call SsELECTUSe(?)}");
+           Class.forName(Driver);
             DBConnection dbcon = new DBConnection();
             Connection con = dbcon.connMethod();
             PreparedStatement ps = con.prepareStatement("select * from AdminTable where USERNAME=? and PASSWORD=?");
