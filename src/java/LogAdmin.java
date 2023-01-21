@@ -21,7 +21,7 @@ private static String Driver="oracle.jdbc.driver.OracleDriver";
            Class.forName(Driver);
             DBConnection dbcon = new DBConnection();
             Connection con = dbcon.connMethod();
-            PreparedStatement ps = con.prepareStatement("select * from AdminTable where USERNAME=? and PASSWORD=?");
+            PreparedStatement ps = con.prepareStatement("select * from USERCHECK where USERNAME=? and PASSWORD=?");
             ps.setString(1, username);
             ps.setString(2, userpassword);
             ResultSet rs = ps.executeQuery();

@@ -61,11 +61,11 @@ public class AdminCheck implements Serializable {
             String u_type =rs.getString(1);
          
             if ("Admin".equals(u_type)) {
-                return "Admin";
+                return "Manager";
             } else {
-                return "index";
-            }
-      } 
+                return "Manager";
+           }
+      }
         
          else {
             FacesContext.getCurrentInstance().addMessage(
@@ -77,9 +77,9 @@ public class AdminCheck implements Serializable {
                    ));
            return "User";
        }
-    }
+    
         
-    }
+    }}
    
     
     

@@ -13,7 +13,7 @@
         }
         .adminform{
            background-color: rgba(1,0,0,0.7);
-           width: 350px;
+           width: 450px;
             margin: auto;
             border-radius: 40px;
             
@@ -31,6 +31,9 @@
             height: 20px;
             border-radius: 20px;
         }
+        .btn{
+            padding: 10px 50px;
+        }
         
     </style>
     <h:body  class="adminBody" >
@@ -41,7 +44,8 @@
             <h3 class="text" >Password:<h:inputText  value="#{adminCheck.password}" class="input"> </h:inputText> </h3>
             
             <h:commandButton class="subbut"  value="Login" action="#{adminCheck.adminChecker}"></h:commandButton>
-        
+            <a href="DataTableForUser.xhtml" style="margin-right: 5px;" class="btn" role="button">Customer Information</a>
+             <h:commandButton class="subbut"  value="delete" action="Deletecustom"></h:commandButton>
         
         </div>
         </h:form>
