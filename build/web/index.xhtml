@@ -6,15 +6,29 @@
         <title> FOOD</title>
         <link rel="stylesheet" href="style.css"></link>
     </h:head>
+    <style>
+        .formbody {
+            
+    background-color: rgba(1,0,0,0.7);
+ 
+    
+    border-radius: 40px;
+    width: 500px;
+    height: 30px;
+    
+        } 
+        
+    </style>
    
     <h:body class="indexbody">
         <strong> <h1 class="titlet"> ONLINE FOOD ORDERING SYSTEM </h1></strong>
-        <h:form class="formbody" >
-        
+        <h:form >
+            <div  class="formbody">
         
         <h:commandButton value="MANAGER" action="Admin.xhtml" class="manager"></h:commandButton>
         <h:commandButton value="USER" action="User.xhtml" class="user"></h:commandButton> 
-          <h:commandButton value="INFORMATION" action="Information.xhtml" class="info"></h:commandButton>
+     
+            </div>
          </h:form>
     </h:body>
 </html>

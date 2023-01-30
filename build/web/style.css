@@ -1,19 +1,8 @@
 
 .indexbody{
- background-image: url("image/indexBackground.jpg");
+ background-image: url("image/IM4.JPG");
  
 }
-.formbody{
-    background-color: rgba(1,0,0,0.7);
-    vertical-align: 10px;
-    justify-content: center;
-    padding:150px 10px;
-    border-radius: 40px;
-    width: 300px;
- margin:auto;
-
-}
-
 .titlet{
     background: linear-gradient(45deg,crimson,#ff6666,#ff00cc,#33ff33);
     text-decoration: double;
@@ -37,9 +26,9 @@ justify-items: right;
 }
 .manager{
     border-radius: 40px;
-    margin-right: 10px;
+
     background: linear-gradient(45deg,#ffff00,#ff6666,#0000cc,#00ffff);
-           padding: 10px 80px;
+           padding: 10px 50px;
        
         
             font-size: 20px;    
@@ -50,7 +39,7 @@ justify-items: right;
      border-radius: 40px;
      font-size: 20px;
     background-color:#333300;
-  padding: 10px 100px;
+  padding: 10px 50px;
 }
 .info{
     border-radius: 40px;
@@ -99,6 +88,8 @@ justify-items: right;
 
 
 .userback{
+    background-repeat: no-repeat;
+    background-size: 100%;
     background-image:url("image/user.jpg");
     
 }

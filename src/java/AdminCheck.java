@@ -54,32 +54,23 @@ public class AdminCheck implements Serializable {
         if(acheck){
         DBConnection connect=new DBConnection();
         Connection conn=connect.connMethod();
-        PreparedStatement pre=conn.prepareStatement("select USERTYPE from USERCHECK where USERNAME=?");
-         pre.setString(1, name);       
+        PreparedStatement pre=conn.prepareStatement("select USERNAME from ADMINTABLE where USERNAME=? and PASSWORD=?");
+         pre.setString(1, name); 
+         pre.setString(2,password);
             ResultSet rs = pre.executeQuery();
             rs.next();
             String u_type =rs.getString(1);
          
             if ("Admin".equals(u_type)) {
-                return "Manager";
-            } else {
-                return "Manager";
-           }
+                return "AdminWorks";
+          } 
       }
+        return "User";
+    }} 
         
-         else {
-            FacesContext.getCurrentInstance().addMessage(
-                    null,
-                   new FacesMessage(FacesMessage.SEVERITY_WARN,
-                          "Wrong Username and Passowrd",
-                          "sorry please enter correctly"
-                           
-                   ));
-           return "User";
-       }
     
         
-    }}
+    
    
     
     

@@ -7,6 +7,11 @@
         <link rel="stylesheet" href="style.css"></link>
     </h:head>
     <style>
+        body{
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-image: url("image/Desserts.jpg");
+        }
         .adminBody{
             background-image:url("image/adminback.jpg");
          
@@ -36,17 +41,18 @@
         }
         
     </style>
-    <h:body  class="adminBody" >
+    <h:body >
         <strong > <h1 style="green" align="center" class="homepage">MANAGER HOMEPAGE</h1></strong> 
         <h:form >
         <div class="adminform">
             <h3 class="text"> Name    :<h:inputText     value="#{adminCheck.name}" class="input"> </h:inputText> </h3>
             <h3 class="text" >Password:<h:inputText  value="#{adminCheck.password}" class="input"> </h:inputText> </h3>
-            
+            <h:commandButton class="subbut"  value="back" action="index.xhtml"></h:commandButton>
             <h:commandButton class="subbut"  value="Login" action="#{adminCheck.adminChecker}"></h:commandButton>
-            <a href="DataTableForUser.xhtml" style="margin-right: 5px;" class="btn" role="button">Customer Information</a>
-             <h:commandButton class="subbut"  value="delete" action="Deletecustom"></h:commandButton>
-        
+            
+           
+             
+
         </div>
         </h:form>
     </h:body>

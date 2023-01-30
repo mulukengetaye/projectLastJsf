@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <style>
+        
+        body{
+            
+            background-image: url("image/IM5.JPG");
+        }
+        .div{
+            background-color: rgba(0,0,0,0.7);
+            margin: auto;
+            width: 400px;
+            height: 300px;
+            align-items: center;
+            margin: auto;
+            border-radius: 40px;
+        }
+        .testfield1{
+            height: 10px;
+            width: 200px;
+            background-color: #ccccff;
+            border-radius: 40px;
+            color: blue;
+            padding-bottom: 5px;
+            margin: auto;
+            
+        }
+         .button{
+            padding: 5px 50px;
+            border-bottom-color: green;
+            border-top-color: blue;
+            border-radius: 40px;
+            background-color: buttonshadow;
+            font-family: initial;
+            color: green;
+            
+            
+        }
+    </style>
+    <h:body>
+        <h:form>
+            <div class="div">
+                <h2 style="color:green">enter the value you want to update</h2>
+           <h3 style="color: violet" >////USER ID...:<h:inputText class="testfield1" value="#{usersDataInsert.id}"> </h:inputText > </h3>
+           <h3 style="color: violet" >////Full Name:<h:inputText  class="testfield1"   value="#{usersDataInsert.name}" > </h:inputText> </h3>
+           <h3 style="color: violet">////Ticket......:<h:inputText  class="testfield1"   value="#{usersDataInsert.ticket}" > </h:inputText> </h3>
+           <h:commandButton value="update" action="#{usersDataInsert.updateData()}" class="button"></h:commandButton>
+              <h:commandButton value="back" action="AdminWorks" class="button"></h:commandButton>
+  </div>
+
+                                              
+
+          
+            
+        </h:form>
+    </h:body>
+</html>

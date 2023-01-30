@@ -4,47 +4,12 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>data table for customer</title>
-         <link rel="stylesheet" href="style.css"></link>
+        <title>Facelet Title</title>
     </h:head>
-    <style>
-        body{
-            background-image: url("image/milk.jpg");
-        }
-        .datatable{
-            border-collapse: collapse;
-            margin: auto;
-            table-layout: auto;
-       
-         
-       background-color: #ffcccc;      }  
-        td{
-         border: 1px solid black;   
-        }
-        .title{
-            font-size: 20px;
-            color: red;
-        }
-        .button{
-            padding: 5px 50px;
-            border-bottom-color: green;
-            border-top-color: blue;
-            border-radius: 40px;
-            background-color: buttonshadow;
-            font-family: initial;
-            color: green;
-            
-            
-        }
-   
-    </style>
-    <h:body  >
-        <h:form>
-        <h3 align="center" class="title"> INFORMATION OF CUSTOMER USED IN ONLINE ORDERING </h3>
-
-        <h:dataTable   
-                         value="#{userBeanDisplay.getuserList()}"
-                         var="data"   cellpadding="20px;"  class="datatable"> 
+    <h:body>
+      <h:dataTable   
+                         value="#{userBeanDisplay.getuserSearch()}"
+                         var="data"  style="background-color: #ccffcc;" cellpadding="20px;"  class="datatable"> 
               <h:column>
                     <f:facet name="header">
                         TICKET_NO
@@ -113,7 +78,5 @@
 
             
        </h:dataTable>
-     
-    </h:form>
     </h:body>
 </html>

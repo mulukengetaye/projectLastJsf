@@ -7,39 +7,101 @@
         <title>user</title>
         <link rel="stylesheet" type="text/css" href="style.css"></link>
     </h:head>
+    <style>
+        .div1{
+           
+            width: 200px;
+            height: 200px;
+            border: 5px solid #9999ff;
+            float: left;
+            margin: 10px;
+             float: left;
+           font-size: 15px;
+            
+        } 
+        #divv1{
+           float: left;
+           font-size: 12px;
+           
+        }
+      
+        .intdiv{
+            flex-flow: column;
+        }
+        .one{
+            height: 3em;
+            width: 120px;
+            color: #3333ff;
+            border-radius: 40px;
+        }
+        .combo{
+            margin-left: 10px;
+            size: 500px;
+            height: 100px;
+            width: 300px;
+            margin: 10px;
+        }
+        .testfield{
+            
+            border-radius: 40px;
+            background-color: #ffffff;
+            border-bottom-color: green;
+             border-top-color: red;
+             
+        }
+        #texts{
+            color: rgba(0,0,0,0.7);
+        }
+    </style>
     <h:body class="userback">
         <h1 class="tit">WELCOME TO FOOD ORDERING MENU</h1>
         <h:form >
-            
+            <h:commandButton value="back" action="index.xhtml" class="userbutton"></h:commandButton>
         <div class="divclass">
-            <h3 style="color: violet" id="texts">Name:<h:inputText  class="testfield"  id="username" value="#{usersTest.username}" > </h:inputText> </h3>
-            <h3 style="color: violet" id="texts">Phone_No:<h:inputText class="testfield" id="phone_no" value="#{usersTest.phone_no}" > </h:inputText > </h3>
-            <h3 style="color: violet" id="texts">City:<h:inputText  class="testfield" id="city"  value="#{usersTest.city}" > </h:inputText > </h3>
-            <h3 style="color: violet" id="texts">Sub City:<h:inputText  class="testfield" id="sub_city" value="#{usersTest.sub_city}"> </h:inputText > </h3>
-            <h3 style="color: violet" id="texts">Street No:<h:inputText class="testfield"  id="street_no" value="#{usersTest.street_no}" > </h:inputText > </h3>
-            <h3 style="color: violet" id="texts">Home No:<h:inputText class="testfield" id="home_no" value="#{usersTest.home_no}"> </h:inputText > </h3>
-            <h3 style="color: violet" id="texts">Food Name<h:inputText class="testfield" id="food_name" value="#{selectOneMenu.home_no}"> </h:inputText > </h3>
-          
-            <h3 style="color: violet" id="texts">Food No<h:inputText class="testfield" id="food_no" value="#{usersTest.home_no}"> </h:inputText > </h3>
+            <h3 style="color: violet" id="texts">////Ticket:<h:inputText  class="testfield"  id="ticket_no" value="#{usersDataInsert.ticket_no}" > </h:inputText> </h3>
+            <h3 style="color: violet" id="texts">/USER ID:<h:inputText class="testfield" id="food_name" value="#{usersDataInsert.user_id}"> </h:inputText > </h3>
+            <h3 style="color: violet" id="texts">Full Name:<h:inputText  class="testfield"  id="username" value="#{usersDataInsert.username}" > </h:inputText> </h3>
+            <h3 style="color: violet" id="texts">///Phone_No:<h:inputText class="testfield" id="phone_no" value="#{usersDataInsert.phone_no}" > </h:inputText > </h3>
+            <h3 style="color: violet" id="texts">////////City:<h:inputText  class="testfield" id="city"  value="#{usersDataInsert.city}" > </h:inputText > </h3>
+            <h3 style="color: violet" id="texts">//Sub City:<h:inputText  class="testfield" id="sub_city" value="#{usersDataInsert.sub_city}"> </h:inputText > </h3>
+            <h3 style="color: violet" id="texts">//Street No:<h:inputText class="testfield"  id="street_no" value="#{usersDataInsert.street_no}" > </h:inputText > </h3>
+            <h3 style="color: violet" id="texts">//Home No:<h:inputText class="testfield" id="home_no" value="#{usersDataInsert.home_no}"> </h:inputText > </h3>
+   
+                
+            <h3 style="color:chartreuse">please select the food and the amount you want</h3>
+            <div  class="combo">
+                <h:selectOneMenu value="#{usersDataInsert.food_detail}" class="one">
+                <f:selectItem itemValue="FOOD" ></f:selectItem >
+                <f:selectItem itemValue="DORO WET->" ></f:selectItem > 
+                      <f:selectItem itemValue="SHIRO WET->"></f:selectItem > 
+                      <f:selectItem itemValue="DESSERT->"></f:selectItem > 
+                      <f:selectItem itemValue="SNACK->"></f:selectItem > 
+                      <f:selectItem itemValue="PIZZA->"></f:selectItem > 
+                      <f:selectItem itemValue="MEAT->"></f:selectItem > 
+                      <f:selectItem itemValue="SALAD->"></f:selectItem >
+            </h:selectOneMenu>
+                            <h:selectOneMenu value="#{usersDataInsert.food_price}" class="one">
+                      
+                      <f:selectItem itemValue="100" ></f:selectItem > 
+                      <f:selectItem itemValue="50"></f:selectItem > 
+                      <f:selectItem itemValue="70"></f:selectItem > 
+                      <f:selectItem itemValue="200"></f:selectItem > 
+                      <f:selectItem itemValue="150"></f:selectItem > 
+                      <f:selectItem itemValue="100"></f:selectItem > 
+                      <f:selectItem itemValue="200"></f:selectItem >
+            </h:selectOneMenu>
+            </div>
+             
+                  <h:commandButton  value="submit" class="userbutton" action="#{usersDataInsert.insertData}"> </h:commandButton>
+
+  
+            
+        </div >
+ 
         
-            <h:selectOneMenu>
-                
-                
-                <f:selectItem itemLabel="please select" itemValue=""></f:selectItem>
-                <f:selectItem itemLabel="shiro" itemValue="1"></f:selectItem>
-                <f:selectItem itemLabel="dero" itemValue="2"></f:selectItem>
-                <f:selectItem itemLabel="pasta" itemValue="3"></f:selectItem>
-                <f:selectItem itemLabel="burger" itemValue="4"></f:selectItem>
-                <f:selectItem itemLabel="pizza" itemValue="5"></f:selectItem>
-                <f:selectItem itemLabel="salade" itemValue="6"></f:selectItem>
-                <f:selectItem itemLabel="egg" itemValue="7"></f:selectItem>
-                 <h:message for="@previous"  />
-    <h:inputText value="#{selectOneMenuBean.selectItem}"  label="Last submitted value:"  />
-           
-          
-                </h:selectOneMenu>
-            <h:commandButton  value="submit" class="userbutton" action="#{usersTest.insertData}"> </h:commandButton>
-        </div>
+
+                       
+
         </h:form>
         
     </h:body>

@@ -8,21 +8,56 @@
          <link rel="stylesheet" href="style.css"></link>
     </h:head>
     <style>
+        body{
+            background-image: url("image/milk.jpg");
+        }
         .datatable{
+            border-collapse: collapse;
             margin: auto;
-        }  
+            table-layout: auto;
+       
+         
+       background-color: #ffcccc;      }  
+        td{
+         border: 1px solid black;   
+        }
         .title{
             font-size: 20px;
             color: red;
         }
-        
+        .button{
+            padding: 5px 50px;
+            border-bottom-color: green;
+            border-top-color: blue;
+            border-radius: 40px;
+            background-color: buttonshadow;
+            font-family: initial;
+            color: green;
+            
+            
+        }
+   
     </style>
-    <h:body  class="dataDecor fg" style="background-color: #9966ff;" >
+    <h:body  >
+        <h:form>
         <h3 align="center" class="title"> INFORMATION OF CUSTOMER USED IN ONLINE ORDERING </h3>
 
         <h:dataTable   
-                         value="#{userBean.getuserList()}"
-                         var="data"  style="background-color: #ccffcc;" cellpadding="20px;"  class="datatable"> 
+                         value="#{userBeanDisplay.getuserList()}"
+                         var="data"   cellpadding="20px;"  class="datatable"> 
+              <h:column>
+                    <f:facet name="header">
+                        TICKET_NO
+                    </f:facet>
+                    #{data.ticket_no}
+                </h:column>
+                          <h:column>
+                    <f:facet name="header">
+                        USER_ID
+                    </f:facet>
+                    #{data.user_id}
+                </h:column>
+
              <h:column>
                     <f:facet name="header">
                         NAME
@@ -62,9 +97,23 @@
                     </f:facet>
                     #{data.home_no}
                 </h:column>
+                             <h:column>
+                    <f:facet name="header">
+                        FOOD_NAME
+                    </f:facet>
+                    #{data.food_detail}
+                </h:column>
+
+              <h:column>
+                    <f:facet name="header">
+                        FOOD_PRICE
+                    </f:facet>
+                    #{data.food_price}
+                </h:column>
+
             
        </h:dataTable>
-        
-      
+     
+    </h:form>
     </h:body>
 </html>

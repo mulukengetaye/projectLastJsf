@@ -17,19 +17,23 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class DeleteCustomer {
-    private String username;
-      public String getUsername() {
-        return username;
+    private float ticket_no;
+
+    public float getTicket_no() {
+        return ticket_no;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setTicket_no(float ticket_no) {
+        this.ticket_no = ticket_no;
     }
+
+    
+  
     public void delete(){
     
             
             Boolean status=false;
-            String query = "delete from MYUSERTABLE where NAME='"+username+"'";
+            String query = "delete from CUSTOMER_TABLE where TICKET_NO='"+ticket_no+"'";
             DBConnection connection1 = new DBConnection();
             Connection connection = connection1.connMethod();
             Statement statement = null;

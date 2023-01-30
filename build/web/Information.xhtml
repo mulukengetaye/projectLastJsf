@@ -5,8 +5,42 @@
     <h:head>
         <title>info</title>
     </h:head>
+    <style>
+        body{
+            background-image: url("image/yyoghurt.jpg");
+        }
+        .divv{
+            background-color: rgba(0,0,0,0.7);
+            margin: auto;
+            width: 500px;
+            height: 100px;
+           
+        }
+        .button{
+            padding: 7px 30px;
+            border-bottom-color: green;
+            border-top-color: blue;
+            border-radius: 40px;
+            background-color: buttonshadow;
+            font-family: fantasy;
+            color: green;
+        }
+        .text{
+            border-radius: 40px;
+            background-color: #ccffcc;
+            height: 25px;
+            width: 200px;
+            
+        }
+    </style>
     <h:body>
-     THIS INFORMATION IS ABOUT OUR ORDERING SYSTEM
-       
+        <h1 align="center" style="color:green; background-color: #ccffcc">THIS INFORMATION IS ONE FOR USER </h1> 
+        <h:form>
+            <div class="divv">
+                <h3 style="color:#ff0033">TICKET NO <h:inputText value="#{userBeanDisplay.ticket_no}" class="text"> </h:inputText></h3>
+         <h:commandButton action="SingleSearch" value="search" class="button"></h:commandButton>
+         <h:commandButton action="AdminWorks.xhtml" value="back" class="button"></h:commandButton>
+            </div>
+       </h:form>
     </h:body>
 </html>
